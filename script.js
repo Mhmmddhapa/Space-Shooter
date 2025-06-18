@@ -103,22 +103,18 @@ function drawHUD() {
   ctx.textAlign = "start";
   ctx.fillText(`Health: ${health}`, 20, 30);
   ctx.fillText(`Score: ${score}`, 20, 60);
-
   ctx.font = "14px Arial";
   ctx.fillText(`Gunakan A / D gerak, Spasi tembak.`, 20, 90);
   ctx.fillText(`DhapaDev`, 20, 110);
 }
-  
 
 function drawGameOver() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-
   ctx.fillStyle = "red";
   ctx.font = "60px Arial";
   ctx.textAlign = "center";
   ctx.fillText("Dead", canvas.width / 2, canvas.height / 2);
-
   ctx.font = "30px Arial";
   ctx.fillStyle = "white";
   ctx.fillText("Click to restart", canvas.width / 2, canvas.height / 2 + 60);
@@ -405,4 +401,18 @@ canvas.addEventListener("click", () => {
   }
 });
 
-gameLoop();
+// === Penundaan sampai semua gambar selesai dimuat ===
+let loadedImages = 0;
+const totalImages = 4;
+
+function imageLoaded() {
+  loadedImages++;
+  if (loadedImages === totalImages) {
+    gameLoop();
+  }
+}
+
+shipImage.onload = imageLoaded;
+enemyImage.onload = imageLoaded;
+bossImage.onload = imageLoaded;
+backgroundImage.onload = imageLoaded;
