@@ -11,7 +11,7 @@ window.addEventListener("resize", () => {
 });
 
 const shipImage = new Image();
-shipImage.src = "assets/Spaceship.png";
+shipImage.src = "assets/spaceship.png";
 const enemyImage = new Image();
 enemyImage.src = "assets/enemy.png";
 const bossImage = new Image();
