@@ -11,7 +11,7 @@ window.addEventListener("resize", () => {
 });
 
 const shipImage = new Image();
-shipImage.src = "assets/spaceship.png";
+shipImage.src = "assets/Spaceship.png";
 const enemyImage = new Image();
 enemyImage.src = "assets/enemy.png";
 const bossImage = new Image();
@@ -20,7 +20,7 @@ const backgroundImage = new Image();
 backgroundImage.src = "assets/planet.jpg";
 
 const shootSound = new Audio("assets/shoot.mp3");
-const explosionSound = new Audio("assets/explosion.mp3");
+const explosionSound = new Audio("assets/Explosion.mp3");
 const bgMusic = new Audio("assets/bg-music.mp3");
 bgMusic.loop = true;
 bgMusic.volume = 0.3;
